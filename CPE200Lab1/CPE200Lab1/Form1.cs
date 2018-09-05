@@ -154,7 +154,18 @@ namespace CPE200Lab1
             val = 0;
             divide = true;
         }
-
+        private void btnDot_Click(object sender, EventArgs e)
+        {
+            if (lblDisplay.Text.Length is 8)
+            {
+                return;
+            }
+            if (!hasDot)
+            {
+                lblDisplay.Text += ".";
+                hasDot = true;
+            }
+        }
         private void btnBack_Click(object sender, EventArgs e)
         {
             if (lblDisplay.Text.Length != 0)
