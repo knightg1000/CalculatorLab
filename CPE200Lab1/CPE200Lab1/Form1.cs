@@ -78,12 +78,7 @@ namespace CPE200Lab1
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            val = val * 0;
-            plus = false;
-            minus = false;
-            multiply = false;
-            divide = false;
-            lblDisplay.Text = val.ToString();
+            lblDisplay.Text = "0";
         }
 
         private double old = 0;
@@ -162,12 +157,13 @@ namespace CPE200Lab1
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            val = val / 10;
-            if(val <= 0)
+            if (lblDisplay.Text.Length != 0)
             {
-                val = 0;
+                lblDisplay.Text = lblDisplay.Text.Remove(lblDisplay.Text.Length - 1);
+            }else
+            {
+                lblDisplay.Text = "0";
             }
-            lblDisplay.Text = val.ToString();
         }
     }
 }
